@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lab5._1
+namespace Exp
 {
     class Program
     {
@@ -8,14 +8,14 @@ namespace Lab5._1
         {
             Console.WriteLine("1. Найти расстояние между двумя точками с заданными координатами (x1, y1) и (x2, y2)");
             Console.WriteLine("Введите x1");
-            int x1 = Math.Abs(Convert.ToInt32(Console.ReadLine()));
+            int x1 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Введите y1");
-            int y1 = Math.Abs(Convert.ToInt32(Console.ReadLine()));
+            int y1 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Введите x2");
-            int x2 = Math.Abs(Convert.ToInt32(Console.ReadLine()));
+            int x2 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Введите y2");
-            int y2 = Math.Abs(Convert.ToInt32(Console.ReadLine()));
-            int g = (x2-x1) * (x2 - x1) + (y2-y1)*(y2-y1);
+            int y2 = Convert.ToInt32(Console.ReadLine());
+            int g = Math.Abs(x2 - x1) * Math.Abs(x2 - x1) + Math.Abs(y2 - y1) * Math.Abs(y2 - y1);
             double S = Math.Pow(g, 0.5);
             Console.WriteLine($"Расстояние между точками {S}");
         }
