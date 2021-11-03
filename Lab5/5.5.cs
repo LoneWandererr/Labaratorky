@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lab5._1
+namespace _5._5
 {
     class Program
     {
@@ -8,19 +8,23 @@ namespace Lab5._1
         {
             Console.WriteLine("Даны координаты трех вершин треугольника: (x1, y1), (x2, y2), (x3, y3). Найти его периметр и площадь");
             Console.WriteLine("Введите координаты первой вершины A");
-            int x1 = Math.Abs(Convert.ToInt32(Console.ReadLine()));
-            int y1 = Math.Abs(Convert.ToInt32(Console.ReadLine()));
+            int x1 = Convert.ToInt32(Console.ReadLine());
+            int y1 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Введите координаты второй вершины B");
-            int x2 = Math.Abs(Convert.ToInt32(Console.ReadLine()));
-            int y2 = Math.Abs(Convert.ToInt32(Console.ReadLine()));
+            int x2 = Convert.ToInt32(Console.ReadLine());
+            int y2 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Введите координаты третьей вершины C");
-            int x3 = Math.Abs(Convert.ToInt32(Console.ReadLine()));
-            int y3 = Math.Abs(Convert.ToInt32(Console.ReadLine()));
-            double AB = Math.Abs(Math.Pow((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1), 0.5));
-            double AC = Math.Abs(x3 - x1);
-            double CB = Math.Abs(y3 - y2);
-            double P = AB + AC + CB;
-            double S = 0.5 * CB * AC;
+            int x3 = Convert.ToInt32(Console.ReadLine());
+            int y3 = Convert.ToInt32(Console.ReadLine());
+            double a = Math.Abs(Math.Pow((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1), 0.5));
+            double b = Math.Abs(Math.Pow((x3 - x1) * (x3 - x1) + (y3 - y1) * (y3 - y1), 0.5));
+            double c = Math.Abs(Math.Pow((x2 - x3) * (x2 - x3) + (y2 - y3) * (y2 - y3), 0.5));
+            double P = a+b+c;
+            double p = P / 2;
+            double S = Math.Pow(p*(p-a)*(p-b)*(p-c), 0.5);
+            //Console.WriteLine($"Сторона а{a}");
+            //Console.WriteLine($"Сторона b{b}");
+            //Console.WriteLine($"Сторона c{c}");
             Console.WriteLine($"Периметр{P}");
             Console.WriteLine($"Площадь {S}");
         }
